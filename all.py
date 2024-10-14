@@ -79,6 +79,7 @@ def help_command():
         "2) list: show all matches\n"
         "3) add: add result for given match\n"
         "4) stand: show standings\n"
+        "6) esc: exit service\n"
     )
 
 def boot_command():
@@ -86,7 +87,9 @@ def boot_command():
     help_command()
 
 def esc_command():
-    exit(0)
+    confirm = input("Are you sure? The current tournament will not be saved (y/n): ")
+    if confirm.lower() == "y":
+        exit(0)
 
 def list_command():
     print("\tid\thome\t\tscore\t\taway\n")
